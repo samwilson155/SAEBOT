@@ -14,7 +14,7 @@ function respond() {
 	  botRegex7 = /\bthe\b/;
 	  botRegex8 = /\bThe\b/;
 	  botRegex9 = /\@Minerva\b/;
-	  botRegex11 = /\bWeather\b/;
+	  botRegex11 = /\bMinerva\b/;
 	  
 
   if(request.text && botRegex.test(request.text)) {
@@ -117,7 +117,7 @@ function respond() {
     this.res.end();
   }
   
-/*    if(request.text && botRegex11.test(request.text)) {
+    if(request.text && botRegex11.test(request.text)) {
     this.res.writeHead(200);
     postMessage6();
     this.res.end();
@@ -126,7 +126,7 @@ function respond() {
     this.res.writeHead(200);
     this.res.end();
   }
-*/
+
 }
 
 function postMessage() {
@@ -304,23 +304,10 @@ function postMessage5() {
   botReq.end(JSON.stringify(body));
 }
 
-/*function postMessage6() {
+function postMessage6() {
   var botResponse, options, body, botReq;
 
-  const request2 = require('request');
-
-  let url = 'http://api.openweathermap.org/data/2.5/weather?q=Indianapolis&units=imperial&appid=3c7e805f6e8a60d1b01923fee9f22390'
-
-  request2(url, function(err2, response2, body2) {
-	  if(err2){
-		  console.log('error:', error);
-	  } else {
-		  let weatherinfo = JSON.parse(body2);
-
-		  var botResponse = "Current Temperature: " + weatherinfo.main.temp + " degrees in " + weatherinfo.name + "\nCurrent Conditions: " + weatherinfo.weather[0].main + "(" + weatherinfo.weather[0].description + ")\nTodays low temperature: " + weatherinfo.main.temp_min + "\nTodays high temperature: " + weatherinfo.main.temp_max + "\nWind Speed: " + weatherinfo.wind.speed + " MPH"
-		  	
-	  }
-  });
+  botResponse = 'Yous be a chach boy \;\)';
 
   options = {
     hostname: 'api.groupme.com',
@@ -351,6 +338,4 @@ function postMessage5() {
   });
   botReq.end(JSON.stringify(body));
 }
-*/
-
 exports.respond = respond;
