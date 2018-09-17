@@ -4,16 +4,15 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /\bPA\b/;
+      	  botRegex = /\bPA\b/;
 	  botRegex2 = /\bPa\b/;
 	  botRegex3 = /\bpa\b/;
 	  botRegex4 = /\bPA Minerva\b/;
 	  botRegex5 = /\blol\b/;
 	  botRegex6 = /\bLol\b/;
 	  botRegex10 = /\whaha\w/;
-	  botRegex7 = /\bthe\b/;
-	  botRegex8 = /\bThe\b/;
 	  botRegex9 = /\@Minerva\b/;
+	  botRegex12 = /\@minerva\b/;
 	  botRegex11 = /\bMinerva\b/;
 	  
 
@@ -87,26 +86,6 @@ function respond() {
     this.res.end();
   }  
   
-    if(request.text && botRegex7.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage4();
-    this.res.end();
-  } else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
-  }
-
-    if(request.text && botRegex8.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage4();
-    this.res.end();
-  } else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
-  }
-  
     if(request.text && botRegex9.test(request.text)) {
     this.res.writeHead(200);
     postMessage5();
@@ -118,6 +97,17 @@ function respond() {
   }
   
     if(request.text && botRegex11.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage6();
+    this.res.end();
+  } else {
+    console.log("don't care");
+    this.res.writeHead(200);
+    this.res.end();
+  }
+	
+
+    if(request.text && botRegex12.test(request.text)) {
     this.res.writeHead(200);
     postMessage6();
     this.res.end();
